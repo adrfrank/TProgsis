@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actividad01", "Actividad01\Actividad01.csproj", "{957D0198-9F06-4570-A0FA-C3135028A55C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actividad01.Data", "Actividad01.Data\Actividad01.Data.csproj", "{41CE9DB5-2D13-4886-B18D-364C767A3384}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41CE9DB5-2D13-4886-B18D-364C767A3384}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{41CE9DB5-2D13-4886-B18D-364C767A3384}.Debug|x86.Build.0 = Debug|Any CPU
+		{41CE9DB5-2D13-4886-B18D-364C767A3384}.Release|x86.ActiveCfg = Release|Any CPU
+		{41CE9DB5-2D13-4886-B18D-364C767A3384}.Release|x86.Build.0 = Release|Any CPU
+		{957D0198-9F06-4570-A0FA-C3135028A55C}.Debug|x86.ActiveCfg = Debug|x86
+		{957D0198-9F06-4570-A0FA-C3135028A55C}.Debug|x86.Build.0 = Debug|x86
+		{957D0198-9F06-4570-A0FA-C3135028A55C}.Release|x86.ActiveCfg = Release|x86
+		{957D0198-9F06-4570-A0FA-C3135028A55C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Actividad01\Actividad01.csproj
+	EndGlobalSection
+EndGlobal
