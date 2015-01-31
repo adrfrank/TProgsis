@@ -120,5 +120,12 @@ namespace Actividad01.Data
             }
         }
 
+
+
+        public void CleanRepository()
+        {
+            LocalObjects = new List<T>();
+            Save();
+        }
     }
 }

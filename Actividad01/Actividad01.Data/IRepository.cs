@@ -12,5 +12,7 @@ namespace Actividad01.Data
         void Add(TEntity entity);
         void Delete(TEntity entity);
         void Save();
+
+        void CleanRepository();
     }
 }
