@@ -35,14 +35,18 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Vuelo.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="FileRepository.cs" />
     <Compile Include="FileRepositoryFactory.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Entities\Pasajero.cs" />
+    <Compile Include="IRepositoryFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RepositoryEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IRepositoryFactory.cs" />
-    <Compile Include="Entities\Vuelo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
