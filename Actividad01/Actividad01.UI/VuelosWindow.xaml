@@ -1,0 +1,24 @@
+﻿<Window x:Class="Actividad01.UI.VuelosWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VuelosWindow" Height="300" Width="300">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left"  VerticalAlignment="Top">
+            <ToolBar>
+                <Button Click="Button_Click">Agregar</Button>
+                <Button>Modificar</Button>
+                <Button>Eliminar</Button>
+            </ToolBar>
+            <ListView HorizontalAlignment="Left"   VerticalAlignment="Top" Height="242" Width="293" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+               
+            </ListView>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
