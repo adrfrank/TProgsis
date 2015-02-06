@@ -1,0 +1,16 @@
+﻿<Window x:Class="Actividad01.UI.PasajerosWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pasajeros" Height="300" Width="540">
+    <Grid>
+        <StackPanel  VerticalAlignment="Top" Margin="0">
+            <ToolBar>
+                <Button Command="{Binding SaveCommand}">Guardar</Button>
+            </ToolBar>
+
+        </StackPanel>
+        <DataGrid x:Name="vuelosList" Margin="10,32,10,10" ItemsSource="{Binding Items}"  />
+
+
+    </Grid>
+</Window>

@@ -13,6 +13,8 @@ namespace Actividad01.Data
         void Delete(TEntity entity);
         void Save();
 
+        void Merge(IEnumerable<TEntity> toMerge);
+
         void CleanRepository();
     }
 }

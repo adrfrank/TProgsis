@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Actividad01.Data;
+using Actividad01.Data.Entities;
+using Microsoft.Practices.Unity;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +16,6 @@ namespace Actividad01.UI
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }

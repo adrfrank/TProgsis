@@ -1,6 +1,4 @@
-﻿using Actividad01.Data;
-using Actividad01.Data.Entities;
-using Actividad01.UI.ViewModels;
+﻿using Actividad01.UI.ViewModels;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
@@ -20,30 +18,27 @@ using System.Windows.Shapes;
 namespace Actividad01.UI
 {
     /// <summary>
-    /// Interaction logic for VuelosWindow.xaml
+    /// Interaction logic for PasajerosWindow.xaml
     /// </summary>
-    public partial class VuelosWindow : Window
+    public partial class PasajerosWindow : Window
     {
+
         [Dependency]
-        public VuelosViewModel ViewModel {
+        public PasajerosViewModel ViewModel
+        {
             set { DataContext = value; }
         }
-
-        //VuelosEditWindow editWindow;
-        public VuelosWindow()
+        public PasajerosWindow()
         {
-            InitializeComponent();          
+            InitializeComponent();
         }
-
-      
-       
 
         // Disclaimer, untested! 
         protected override void OnClosing(CancelEventArgs e)
         {
             e.Cancel = true;  // cancels the window close    
             this.Hide();      // Programmatically hides the window
+           
         }
-
     }
 }
