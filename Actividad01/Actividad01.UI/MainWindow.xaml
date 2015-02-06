@@ -1,11 +1,12 @@
 ﻿<Window x:Class="Actividad01.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="164.198" Width="223.971" ResizeMode="NoResize">
+        Title="MainWindow" Height="232" Width="300" ResizeMode="NoResize">
     <Grid>
-        <StackPanel Margin="10" >
-            <Button Margin="10" FontSize="20" Click="Button_Click">Vuelos</Button>
-            <Button Margin="10" FontSize="20">Pasajeros</Button>
+        <StackPanel Margin="60,40">
+            <Button x:Name="VuelosButton" Content="Vuelos" Margin="0,0,0,10" Height="50" Click="Button_Click"/>
+            <Button x:Name="PasajerosButton" Content="Pasajeros" Margin="0,0,0,20" Height="50" Click="PasajerosButton_Click"/>
         </StackPanel>
+
     </Grid>
 </Window>

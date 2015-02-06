@@ -8,7 +8,7 @@ using System.Runtime.Serialization.Json;
 
 namespace Actividad01.Data
 {
-    class FileRepository<T> : IRepository<T>
+    public class FileRepository<T> : IRepository<T>
         where T : RepositoryEntity
     {
         public const string FileExtensions = ".txt,.repo";
@@ -20,8 +20,9 @@ namespace Actividad01.Data
         public string FilePath { get; set; }
         public List<T> LocalObjects { get; private set; }
 
-        public FileRepository(string filePath = null)
+        public FileRepository()
         {
+            string filePath = null;
             if (filePath == null)
             {//Construct a new name
                 FilePath = Directory.GetCurrentDirectory() + "\\" + typeof(T).Name + ".repo";
@@ -99,9 +100,25 @@ namespace Actividad01.Data
             {
                 var ids = LocalObjects.Select(x => x.Id);
                 if (ids.Contains(entity.Id))
-                    entity.Id = ids.OrderByDescending(x => x).First() + 1;
+                    entity.Id = getNewId();
             }
             LocalObjects.Add(entity);
+        }
+
+        int getNewId() {
+            if (LocalObjects.Count == 0) return 1;
+            var ids = LocalObjects.Select(x => x.Id);
+            return ids.OrderByDescending(x => x).First() + 1; 
+        }
+
+        void setNewIds() {
+            int newid = getNewId();
+            var ids = LocalObjects.Where(x=> x.Id!=0).Select(x => x.Id).Distinct();
+            foreach (var item in LocalObjects)
+            {
+                if (!ids.Contains(item.Id))
+                    item.Id = newid++;
+            }
         }
 
         public void Delete(T entity)
@@ -113,6 +130,7 @@ namespace Actividad01.Data
 
         public void Save()
         {
+            setNewIds();
             using (var writer = getNewWriter())
             {
                 DataContractJsonSerializer jsonSer = new DataContractJsonSerializer(typeof(List<T>));
@@ -126,6 +144,27 @@ namespace Actividad01.Data
         {
             LocalObjects = new List<T>();
             Save();
+        }
+
+
+        public void Merge(IEnumerable<T> toMerge)
+        {
+            foreach (var item in toMerge)
+            {
+
+                T obj=null;
+                if(item.Id > 0)
+                    obj = LocalObjects.FirstOrDefault(x => x.Id == item.Id);
+                if (obj != null)
+                {
+                    obj = item;
+                }
+                else
+                {
+                    LocalObjects.Add(item);
+                }
+
+            }
         }
     }
 }
