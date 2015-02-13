@@ -41,16 +41,20 @@ namespace Actividad01.Test
             Assert.IsTrue(vals.Count > 0);
             repo.CleanRepository();
             vals = repo.FetchAll();
+            vals.MergeSort(x=>x.Id);
             Assert.IsTrue(vals.Count == 0);          
         }
 
         [TestMethod]
         public void TestHashcode() {
-            object obj1, obj2;
-            obj1 = "a";
-            obj2 = "b";
+            IRepository<Pasajero> repo = new FileRepositoryFactory<Pasajero>().CreateRepository();
+            repo.Add(new Pasajero(){ Nombre="segundo"});
+            repo.Add(new Pasajero(){ Nombre="Primero"});
+            repo.Save();
+            var desordenados = repo.FetchAll();
+            var ordenados = desordenados.MergeSort(x => x.Nombre);
 
-            Assert.IsTrue(obj1.GetHashCode() < obj2.GetHashCode());
+            
         }
     }
 }
