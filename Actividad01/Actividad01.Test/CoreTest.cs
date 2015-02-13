@@ -43,5 +43,14 @@ namespace Actividad01.Test
             vals = repo.FetchAll();
             Assert.IsTrue(vals.Count == 0);          
         }
+
+        [TestMethod]
+        public void TestHashcode() {
+            object obj1, obj2;
+            obj1 = "a";
+            obj2 = "b";
+
+            Assert.IsTrue(obj1.GetHashCode() < obj2.GetHashCode());
+        }
     }
 }
