@@ -52,8 +52,8 @@ namespace Actividad01.Test
             repo.Add(new Pasajero(){ Nombre="Primero"});
             repo.Save();
             var desordenados = repo.FetchAll();
-            var ordenados = desordenados.MergeSort(x => x.Nombre);
-
+            var ordenados = desordenados.MergeSort(x => x.Asiento);
+            Console.WriteLine("asdf")
             
         }
     }
