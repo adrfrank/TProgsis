@@ -69,10 +69,18 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PasajerosListWindow.xaml.cs">
+      <DependentUpon>PasajerosListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PasajerosSearchWindow.xaml.cs">
+      <DependentUpon>PasajerosSearchWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PasajerosWindow.xaml.cs">
       <DependentUpon>PasajerosWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ActionCommand.cs" />
+    <Compile Include="ViewModels\PasajerosDataViewModel.cs" />
+    <Compile Include="ViewModels\PasajeroSearchViewModel.cs" />
     <Compile Include="ViewModels\PasajerosViewModel.cs" />
     <Compile Include="ViewModels\VuelosDataViewModel.cs" />
     <Compile Include="ViewModels\VuelosViewModel.cs" />
@@ -87,6 +95,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PasajerosListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PasajerosSearchWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

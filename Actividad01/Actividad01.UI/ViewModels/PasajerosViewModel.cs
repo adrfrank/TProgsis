@@ -33,8 +33,10 @@ namespace Actividad01.UI.ViewModels
             //Reload();
         }
 
-        void Search() { 
-        
+        void Search() {
+
+            var searchform = new PasajerosSearchWindow(new PasajeroSearchViewModel(repository));
+            searchform.Show();
         }
         public void Reload() {
             Items = new ListCollectionView(repository.FetchAll());

@@ -1,0 +1,11 @@
+﻿<Window x:Class="Actividad01.UI.PasajerosSearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Buscar Pasajero" Height="109" Width="351" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Buscar pasajero por pellido" HorizontalAlignment="Left" Margin="10,0,0,42" VerticalAlignment="Bottom"/>
+        <TextBox Height="23" Margin="169,0,10,40" TextWrapping="Wrap" VerticalAlignment="Bottom" Text="{Binding SearchTerm, Mode=TwoWay}" />
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="117,43,0,0" VerticalAlignment="Top" Width="75" Command="{Binding SearchCommand , Mode=TwoWay}" />
+
+    </Grid>
+</Window>

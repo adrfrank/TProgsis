@@ -1,0 +1,9 @@
+﻿<Window x:Class="Actividad01.UI.PasajerosListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PasajerosListWindow" Height="300" Width="300">
+    <Grid>
+        <DataGrid x:Name="pasajerosList" ItemsSource="{Binding Pasajeros}" />
+
+    </Grid>
+</Window>

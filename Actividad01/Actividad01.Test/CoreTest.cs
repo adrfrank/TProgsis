@@ -54,14 +54,14 @@ namespace Actividad01.Test
             repo.Save();
             var desordenados = repo.FetchAll();
             var ordenados = desordenados.MergeSort(x => x.Asiento);
-            Console.WriteLine("asdf")
+            Console.WriteLine("asdf");
             
         }
 
         [TestMethod]
         public void TestBinaryTree() {
             int[] desordenados = { 5, 4,2,8,7,1 };
-            var arbol = new Actividad01.Data.Util.BinaryTree<int>(desordenados[0], x => x);
+            var arbol = new Actividad01.Data.Util.BinaryTreeList<int>(desordenados[0], x => x);
             for (int i = 1; i < desordenados.Length; i++) {
                 arbol.Insert(desordenados[i]);
             }

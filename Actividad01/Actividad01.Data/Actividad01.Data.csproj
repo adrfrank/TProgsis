@@ -45,6 +45,7 @@
     <Compile Include="IRepositoryFactory.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Util\BinaryTreeList.cs" />
     <Compile Include="Util\BinaryTree.cs" />
     <Compile Include="MergeSortExtensions.cs" />
     <Compile Include="RepositoryEntity.cs" />

@@ -6,7 +6,7 @@
         <StackPanel  VerticalAlignment="Top" Margin="0">
             <ToolBar>
                 <Button Command="{Binding SaveCommand}">Guardar</Button>
-                <Button Command="{Binding SaveCommand}">Buscar</Button>
+                <Button Command="{Binding SearchCommand}">Buscar</Button>
             </ToolBar>
 
         </StackPanel>
