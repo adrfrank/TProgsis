@@ -21,14 +21,20 @@ namespace Actividad01.UI.ViewModels
             this.repository = repository;
             Items = new ListCollectionView(repository.FetchAll());
             SaveCommand = new ActionCommand(Save);
+            SearchCommand = new ActionCommand(Search);
         }
 
         public ActionCommand SaveCommand { get; set; }
+        public ActionCommand SearchCommand { get; set; }
 
         void Save() {
            
             repository.Save();
             //Reload();
+        }
+
+        void Search() { 
+        
         }
         public void Reload() {
             Items = new ListCollectionView(repository.FetchAll());

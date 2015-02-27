@@ -20,7 +20,7 @@ namespace Actividad01.Data
                 {
                     var c1 = v1 as IComparable;
                     var c2 = v2 as IComparable;
-                    if (c1.CompareTo(c2) < 0)
+                    if (c1.CompareTo(c2) > 0)
                     {
                         result.Add(f2);
                         l2.Remove(f2);
@@ -34,10 +34,17 @@ namespace Actividad01.Data
                
                
             }
-            if(l1.Count >0)
-                result.AddRange(l1);
-            if(l2.Count > 0)
-                result.AddRange(l2);
+            while (l1.Count > 0)
+            {
+                result.Add(l1.First());
+                l1.RemoveAt(0);
+            }
+            while (l2.Count > 0)
+            {
+                result.Add(l2.First());
+                l2.RemoveAt(0);
+
+            }
             return result;
         }
 
@@ -49,8 +56,8 @@ namespace Actividad01.Data
             int midle = sequence.Count()/2;
             var left = sequence.Take(midle);
             var right = sequence.Skip(midle);
-            right.MergeSort(compareFunc);
-            left.MergeSort(compareFunc);
+            right=right.MergeSort(compareFunc);
+            left=left.MergeSort(compareFunc);
             var result = right.Merge(left,compareFunc);
             return result;
         }

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Actividad01.Data;
 using Actividad01.Data.Entities;
+using System.Diagnostics;
 
 namespace Actividad01.Test
 {
@@ -55,6 +56,23 @@ namespace Actividad01.Test
             var ordenados = desordenados.MergeSort(x => x.Nombre);
 
             
+        }
+
+        [TestMethod]
+        public void TestBinaryTree() {
+            int[] desordenados = { 5, 4,2,8,7,1 };
+            var arbol = new Actividad01.Data.Util.BinaryTree<int>(desordenados[0], x => x);
+            for (int i = 1; i < desordenados.Length; i++) {
+                arbol.Insert(desordenados[i]);
+            }
+            arbol.InOrdenAction(entero => {
+                Console.WriteLine(entero);
+                Debug.WriteLine(entero);
+            });
+            var found = arbol.Find(7);
+            Assert.AreEqual(7, found);
+            found  = arbol.Find(15);
+            Assert.AreEqual(default(int), found);
         }
     }
 }

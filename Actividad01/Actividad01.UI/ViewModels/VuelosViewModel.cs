@@ -20,9 +20,15 @@ namespace Actividad01.UI.ViewModels
             this.repository = repository;
             Vuelos = new ListCollectionView(repository.FetchAll());
             SaveCommand = new ActionCommand(Save);
+            FechaSortCommand = new ActionCommand(FechaSort);
+            AsientosSortCommand = new ActionCommand(AsientosSort);
         }
 
+
         public ActionCommand SaveCommand { get; set; }
+
+        public ActionCommand FechaSortCommand { get; set; }
+        public ActionCommand AsientosSortCommand { get; set; }
 
         void Save() {
            
@@ -30,9 +36,33 @@ namespace Actividad01.UI.ViewModels
             //Reload();
         }
 
+        void FechaSort() {
+            repository.Save();
+
+            var vlist = repository.FetchAll().MergeSort(x => x.FechaSalida).ToList();
+            var form = new VuelosListWindow();
+            form.ViewModel = new VuelosDataViewModel(vlist);
+            form.Show();
+            
+        }
+        void AsientosSort()
+        {
+            repository.Save();
+            var l = repository.FetchAll();
+            var vlist = l.MergeSort(x => x.AsientosDisponibles).ToList();
+            var form = new VuelosListWindow();
+            form.ViewModel = new VuelosDataViewModel(vlist);
+            form.Show();
+            
+        }
+
         public void Reload()
         {
             Vuelos = new ListCollectionView(repository.FetchAll());
+            Vuelos.Refresh();
+
         }
+
+
     }
 }

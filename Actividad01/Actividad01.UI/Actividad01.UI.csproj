@@ -74,7 +74,11 @@
     </Compile>
     <Compile Include="ViewModels\ActionCommand.cs" />
     <Compile Include="ViewModels\PasajerosViewModel.cs" />
+    <Compile Include="ViewModels\VuelosDataViewModel.cs" />
     <Compile Include="ViewModels\VuelosViewModel.cs" />
+    <Compile Include="VuelosListWindow.xaml.cs">
+      <DependentUpon>VuelosListWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VuelosWindow.xaml.cs">
       <DependentUpon>VuelosWindow.xaml</DependentUpon>
     </Compile>
@@ -87,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PasajerosWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VuelosListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

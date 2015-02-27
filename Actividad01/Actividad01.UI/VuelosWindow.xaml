@@ -5,7 +5,9 @@
     <Grid>
         <StackPanel  VerticalAlignment="Top" Margin="0">
             <ToolBar>
-                <Button Command="{Binding SaveCommand}">Guardar</Button>                
+                <Button Command="{Binding SaveCommand}">Guardar</Button>
+                <Button Command="{Binding FechaSortCommand}">Ordenar por fecha</Button>
+                <Button Command="{Binding AsientosSortCommand}">Ordenar por asientos</Button>
             </ToolBar>
 
         </StackPanel>
