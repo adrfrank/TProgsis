@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Actividad01.Data.Util
 {
-    public class GraphNode<T> where T : IComparable
+    public class GraphNode<T> : IComparable<T> where T : IComparable
     {
         public T Data { get; set; }
         public List<GraphArist<T>> Arists { get; set; }
@@ -21,6 +21,11 @@ namespace Actividad01.Data.Util
                 Arists.Add(new GraphArist<T>(this, to, dist));
                 to.AddArist(this, dist);
             }
+        }
+
+        public int CompareTo(T other)
+        {
+            return Data.CompareTo(other);
         }
     }
 }

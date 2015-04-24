@@ -63,6 +63,49 @@ namespace Actividad01.Data.Util
             return default(T);
         }
 
+        public Graph<T> GetMSTByPrim() {
+            var mst = new Graph<T>();
+            int nodeCount =  this.Nodes.Count;
+            mst.AddNode(Root.Data);
+            HashSet<GraphNode<T>> visited = new HashSet<GraphNode<T>>();
+            visited.Add(Root);
+            while (visited.Count < nodeCount)
+            {
+                SortedList<double, GraphArist<T>> edges = new SortedList<double, GraphArist<T>>();
+                foreach (var item in visited)
+                {
+                    item.Arists.ForEach(e =>
+                    {
+                        if (!visited.Contains(e.To) && !edges.ContainsKey(e.Distance)) {
+                            edges.Add(e.Distance, e);
+                        }
+                    });
+                }
+
+                var first = edges.First();
+                visited.Add(first.Value.To);
+                mst.AddNode(first.Value.To.Data);
+                mst.AddArist(first.Value.From.Data, first.Value.To.Data, first.Value.Distance);                
+            }
+            return mst;
+        }
+
+        public void PrintEdges() {
+            var vistes = new HashSet<T>();
+            Nodes.ForEach(n => n.Arists.ForEach(a => {
+                //Console.WriteLine(string.Format("{0} -> {1}: {2}", a.From.Data, a.To.Data, a.Distance));
+                vistes.Add(n.Data);
+                if (!vistes.Contains(a.To.Data))
+                {
+                    Debug.WriteLine(string.Format("{0} -> {1}: {2}", a.From.Data, a.To.Data, a.Distance));
+                    Trace.WriteLine(string.Format("{0} -> {1}: {2}", a.From.Data, a.To.Data, a.Distance));
+                }
+            }));
+        }
+
+
+
+
 
     }
 }

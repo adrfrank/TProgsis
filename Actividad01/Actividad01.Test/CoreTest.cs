@@ -103,6 +103,8 @@ namespace Actividad01.Test
 
             var found = graph.FindFromRoot("Cancun");
 
+            
+
             if (found == null)
                 Debug.WriteLine("No Encontrado");
             else
@@ -122,7 +124,12 @@ namespace Actividad01.Test
                 Debug.WriteLine("No Encontrado");
             else
                 Debug.WriteLine("Encontrado: " + found);
-           
+
+
+            var mst = graph.GetMSTByPrim();
+            mst.PrintEdges();
+            Trace.WriteLine("----");
+            graph.PrintEdges();
         }
     }
 }
